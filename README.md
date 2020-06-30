@@ -46,7 +46,7 @@ When text is <b>「I never made it to sixth grade」</b>
 
 # summary 
 
-process is written [my blog](https://trafalbad.hatenadiary.jp/entry/2020/06/30/231219)
+process is written in [my blog](https://trafalbad.hatenadiary.jp/entry/2020/06/30/231219)
 
 
 # references
