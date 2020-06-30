@@ -10,11 +10,11 @@ similar model is tacotron2.
 
 ## training step by generate audio
 1. Download dataset you like(The LJ Speech Dataset is recommended)
-2. Adjust hyper parameter in '''hyperparams.py'''. Especially, set dataset specified folder.
-3. '''python prepare_data.py'''
-4. '''python train_transformer.py'''
-5. '''train_postnet.py'''
-6. finally generate audio by '''generate_audio.py'''
+2. Adjust hyper parameter in ```hyperparams.py```. Especially, set dataset specified folder.
+3. ```python prepare_data.py```
+4. ```python train_transformer.py```
+5. ```train_postnet.py```
+6. finally generate audio by ```generate_audio.py```
 
 
 ## data
