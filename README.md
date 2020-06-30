@@ -28,9 +28,11 @@ similar model is tactron2.
 pip install -r requirements.txt
 ```
 
-# data
+# dataset
 
-dataset is [The LJ Speech Dataset](https://keithito.com/LJ-Speech-Dataset/)
+dataset depended on [The LJ Speech Dataset](https://keithito.com/LJ-Speech-Dataset/)
+
+
 
 # sample generated audio
 
@@ -39,6 +41,7 @@ When text is <b>「it dose not look like you are gonna」</b>
 
 When text is <b>「I never made it to sixth grade」</b>
 [generated audio2](https://www.instagram.com/p/CCDXV6OFRYy/?igshid=6czncaupql0s)
+
 
 
 # summary 
