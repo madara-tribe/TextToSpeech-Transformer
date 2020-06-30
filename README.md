@@ -5,11 +5,11 @@
 TextToSpeech-Transformer is based on [Neural Speech Synthesis with Transformer Network](https://arxiv.org/abs/1809.08895).
 similar model is tactron2.
 
-<b>model structure</b>
-
-
 <b>process to generate audio</b>
 
+<img src="https://user-images.githubusercontent.com/48679574/86134591-ca91f000-bb24-11ea-8c02-807544c708dc.jpg" width="450px">
+
+<b>model structure</b>
 
 
 ## training step by generate audio
@@ -22,7 +22,11 @@ similar model is tactron2.
 
 
 ## Requirements
-
+```
+- pytorch
+- python3
+pip install -r requirements.txt
+```
 
 ## data
 
