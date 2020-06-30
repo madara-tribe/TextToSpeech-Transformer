@@ -1,13 +1,14 @@
 import torch as t
 from utils import spectrogram2wav
 from scipy.io.wavfile import write
-import hyperparams as hp
+import network.hyperparams as hp
 from text import text_to_sequence
 import numpy as np
-from network import ModelPostNet, Model
+from network.network import ModelPostNet, Model
 from collections import OrderedDict
 from tqdm import tqdm
 import argparse
+
 
 def load_checkpoint(step, model_name="transformer"):
     state_dict = t.load('./checkpoint/checkpoint_%s_%d.pth.tar'% (model_name, step))   
@@ -18,12 +19,11 @@ def load_checkpoint(step, model_name="transformer"):
 
     return new_state_dict
 
-def synthesis(text, args):
+def create_audio_wave(text, max_len, transformaer_pth_step = 160000, postnet_pth_step=100000, save = None):
     m = Model()
     m_post = ModelPostNet()
-
-    m.load_state_dict(load_checkpoint(args.restore_step1, "transformer"))
-    m_post.load_state_dict(load_checkpoint(args.restore_step2, "postnet"))
+    m.load_state_dict(load_checkpoint(transformaer_pth_step, "transformer"))
+    m_post.load_state_dict(load_checkpoint(postnet_pth_step, "postnet"))
 
     text = np.asarray(text_to_sequence(text, [hp.cleaners]))
     text = t.LongTensor(text).unsqueeze(0)
@@ -36,25 +36,18 @@ def synthesis(text, args):
     m_post = m_post.cuda()
     m.train(False)
     m_post.train(False)
-    
-    pbar = tqdm(range(args.max_len))
+    max_len= max_len
+    pbar = tqdm(range(max_len))
     with t.no_grad():
         for i in pbar:
             pos_mel = t.arange(1,mel_input.size(1)+1).unsqueeze(0).cuda()
             mel_pred, postnet_pred, attn, stop_token, _, attn_dec = m.forward(text, mel_input, pos_text, pos_mel)
+            print(np.array(attn_dec).shape)
             mel_input = t.cat([mel_input, postnet_pred[:,-1:,:]], dim=1)
 
         mag_pred = m_post.forward(postnet_pred)
-        
-    wav = spectrogram2wav(mag_pred.squeeze(0).cpu().numpy())
-    write(hp.sample_path + "/test.wav", hp.sr, wav)
-    
-if __name__ == '__main__':
-    
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--restore_step1', type=int, help='Global step to restore checkpoint', default=172000)
-    parser.add_argument('--restore_step2', type=int, help='Global step to restore checkpoint', default=100000)
-    parser.add_argument('--max_len', type=int, help='Global step to restore checkpoint', default=400)
 
-    args = parser.parse_args()
-    synthesis("Transformer model is so fast!",args)
+    wav = spectrogram2wav(mag_pred.squeeze(0).cpu().numpy())
+    if save:
+        write(hp.sample_path + "/test.wav", hp.sr, wav)
+    return wav
