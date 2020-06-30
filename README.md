@@ -11,6 +11,9 @@ similar model is tactron2.
 
 <b>model structure</b>
 
+<img src="https://user-images.githubusercontent.com/48679574/86134611-d1206780-bb24-11ea-81e0-b156ac8c8b97.png" width="400px">
+
+
 
 ## training step by generate audio
 1. Download dataset you like(The LJ Speech Dataset is recommended)
@@ -40,6 +43,11 @@ When text is <b>「it dose not look like you are gonna」</b>
 
 When text is <b>「I never made it to sixth grade」</b>
 [generated audio2](https://www.instagram.com/p/CCDXV6OFRYy/?igshid=6czncaupql0s)
+
+
+## summary 
+
+process is written my blog
 
 
 ## references
