@@ -16,8 +16,8 @@ similar model is tactron2.
 2. Adjust hyper parameter in ```hyperparams.py```. Especially, set dataset specified folder.
 3. ```python prepare_data.py```
 4. ```python train_transformer.py```
-5. ```train_postnet.py```
-6. finally generate audio by ```generate_audio.py```
+5. ```python train_postnet.py```
+6. Finally generate audio by ```generate_audio.py```
 
 
 # Requirements
