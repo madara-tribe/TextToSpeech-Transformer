@@ -5,13 +5,9 @@
 TextToSpeech-Transformer is based on [Neural Speech Synthesis with Transformer Network](https://arxiv.org/abs/1809.08895).
 similar model is tactron2.
 
-<b>process to generate audio</b>
+<b>process to generate audio</b> and <b>model structure</b>
 
-<img src="https://user-images.githubusercontent.com/48679574/86134591-ca91f000-bb24-11ea-8c02-807544c708dc.jpg" width="450px">
-
-<b>model structure</b>
-
-<img src="https://user-images.githubusercontent.com/48679574/86134611-d1206780-bb24-11ea-81e0-b156ac8c8b97.png" width="400px">
+<img src="https://user-images.githubusercontent.com/48679574/86134591-ca91f000-bb24-11ea-8c02-807544c708dc.jpg" width="450px"><img src="https://user-images.githubusercontent.com/48679574/86134611-d1206780-bb24-11ea-81e0-b156ac8c8b97.png" width="400px">
 
 
 
