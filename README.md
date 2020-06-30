@@ -52,7 +52,7 @@ process is written [my blog](https://trafalbad.hatenadiary.jp/entry/2020/06/30/2
 # references
 
 - [Tansformer-TTS like tactron](https://github.com/soobinseo/Transformer-TTS)
-- [Prretrain model](https://drive.google.com/drive/folders/1r1tdgsdtipLossqD9ZfDmxSZb8nMO8Nf)
+- [Pretrain model](https://drive.google.com/drive/folders/1r1tdgsdtipLossqD9ZfDmxSZb8nMO8Nf)
 
 
 
