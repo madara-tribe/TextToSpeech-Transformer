@@ -22,9 +22,10 @@ similar model is tactron2.
 
 
 ## Requirements
-```
+
 - pytorch
 - python3
+```
 pip install -r requirements.txt
 ```
 
