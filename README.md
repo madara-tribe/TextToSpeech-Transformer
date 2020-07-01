@@ -11,7 +11,7 @@ similar model is tactron2.
 
 
 
-# training step by generating audio
+# training steps
 1. Download dataset you like(The LJ Speech Dataset is recommended)
 2. Adjust hyper parameter in ```hyperparams.py```. Especially, set dataset specified folder.
 3. ```python prepare_data.py```
